@@ -50,8 +50,8 @@ devices, as with your normal Scio installation.
    computer and copy the files there.
 4. Restart Obsidian. Under **Settings → Community plugins**, enable community
    plugins if necessary, then enable **Scio Notes** in the installed plugins list.
-5. Connect **Tailscale on your phone**. In the phone's browser, check that your
-   usual Scio address opens.
+5. If you use Tailscale, connect it **on your phone**. In the phone's browser,
+   check that your usual Scio address opens over your chosen network connection.
 6. Open **Settings → Scio Notes**. Enter that exact base address (for example
    `http://100.x.y.z:8001` or `https://your-scio.your-tailnet.ts.net`), without
    `/api` or a page path. Choose a vault folder, then tap **Save settings and sync**.
@@ -60,6 +60,21 @@ Use the same steps on desktop, with your computer's file manager. The minimum
 Obsidian version is 1.8.7. The plugin uses Obsidian's networking and Vault APIs;
 its runtime has no Node.js, Electron or filesystem dependencies. iOS is not a
 tested target for this version.
+
+The owner has confirmed the Android test of the updated plugin, including the
+filename change. Desktop behavior has automated coverage but has not yet been
+manually verified in Obsidian.
+
+## Update an existing installation
+
+1. Disable **Scio Notes** under **Settings → Community plugins**.
+2. Download and extract the latest `scio-notes.zip` from GitHub Releases.
+3. Replace `main.js` and `manifest.json` in your existing `scio-notes` plugin
+   folder. Keep `data.json`: it contains your settings and sync baselines.
+4. Enable the plugin again and select **Sync now** in its settings.
+
+Do not delete the existing plugin folder or replace it with an empty folder.
+Community-directory installation and updates are not available yet.
 
 ## Daily use
 
@@ -79,8 +94,8 @@ tested target for this version.
   if another note fails; the next sync retries unfinished notes and missing images.
 - Scio title and subject-name changes update the Markdown heading/properties.
   Existing filenames/folders remain stable, avoiding broken references.
-- On the first sync after this update, unedited legacy imports such as
-  `Cell division (12).md` are renamed to `Cell division.md` when that name is
+- On the first sync after upgrading from an early private build, unedited legacy
+  imports such as `Cell division (12).md` are renamed to `Cell division.md` when that name is
   free. The rename uses Obsidian's file manager, which respects its automatic
   link-update setting. Locally edited files and occupied target names are kept.
 - Only notes saved on the Scio server are imported. A draft that has not reached
@@ -98,8 +113,7 @@ tested target for this version.
 - Existing files without a matching saved baseline are never overwritten.
 - SHA-256 baselines and per-note progress live in
   `.obsidian/plugins/scio-notes/data.json`. Keep this file when updating the
-  plugin. Copy only `main.js`, `manifest.json` and optionally this README during
-  updates; do not replace your existing plugin folder with an empty one.
+  plugin; follow [Update an existing installation](#update-an-existing-installation).
 - Renames inside Obsidian are tracked. Moves or edits outside Obsidian, especially
   through another vault sync tool, may cause a conflict or recreate the old path.
   Preserve the imported folder structure for predictable reference links.
@@ -107,15 +121,14 @@ tested target for this version.
   Scio imports on **one device** and let that service distribute the resulting
   files. Independent vaults can each run this plugin. Simultaneous imports into
   one shared vault and automatic recovery after deleting plugin state are outside
-  this first version's scope.
+  the current version's scope.
 - Scio address and target-folder combinations have separate baselines. Changing
   either does not delete old imports. If you change a server's address or restore
   a different Scio database, use a new target folder to avoid ID collisions.
 
 ## Build and package (maintainers)
 
-From the standalone repository root (or `obsidian-plugin/` while staged inside
-Scio), with Node.js 22.13+, npm and Python 3.10+ installed:
+From the repository root, with Node.js 22.13+, npm and Python 3.10+ installed:
 
 ```sh
 npm ci

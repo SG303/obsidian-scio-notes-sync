@@ -6,6 +6,12 @@ from the Scio application. Public releases are recorded in dated sections below.
 
 ## [Unreleased]
 
+### Changed
+
+- Refresh the README for the published repository: document private-install
+  updates, clarify optional Tailscale use and legacy filename migration, and
+  distinguish the owner's successful Android test from pending desktop testing.
+
 ## [0.1.0] - 2026-11-05
 
 ### Added
