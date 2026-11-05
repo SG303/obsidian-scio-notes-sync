@@ -8,8 +8,9 @@ is required.
 
 This is an independent community plugin, not an official Obsidian product.
 Repository name: `obsidian-scio-notes-sync`. Installed plugin ID: `scio-notes`.
-The project is prepared for its first public release; it is not yet listed in
-Obsidian's Community plugins directory. Until then, install it manually below.
+Install from [GitHub Releases](https://github.com/SG303/obsidian-scio-notes-sync/releases).
+The plugin is not yet listed in Obsidian's Community plugins directory;
+use the manual installation steps below.
 
 ## Requirements and privacy
 
@@ -39,7 +40,8 @@ devices, as with your normal Scio installation.
 
 1. Install/open Obsidian and open the vault where you want your Scio notes.
    Use a vault stored in a folder accessible to your Android file manager.
-2. Download `scio-notes.zip` and extract it. It contains a `scio-notes` folder.
+2. Download [scio-notes.zip](https://github.com/SG303/obsidian-scio-notes-sync/releases/latest/download/scio-notes.zip)
+   and extract it. It contains a `scio-notes` folder.
 3. In your file manager, enable **Show hidden files**. Copy that folder into
    `<your vault>/.obsidian/plugins/` (create `plugins` if it does not exist).
    The resulting files must be `.obsidian/plugins/scio-notes/main.js` and
@@ -154,7 +156,7 @@ real-device checks of Android networking, image rendering and lifecycle behavior
 
 ## Support and license
 
-Once the repository is created, report issues through its GitHub **Issues** tab.
+Report issues through the repository's GitHub **Issues** tab.
 Include the plugin version, Obsidian version, desktop/Android version, steps to
 reproduce and the sync status message. Remove private note contents and your
 Scio/Tailscale address from reports. Never attach the entire vault or `data.json`.
