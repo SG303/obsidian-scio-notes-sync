@@ -1,0 +1,31 @@
+{
+  "name": "obsidian-scio-notes-sync",
+  "version": "0.1.0",
+  "private": true,
+  "description": "One-way sync of Scio lecture notes and images into an Obsidian vault.",
+  "license": "MIT",
+  "author": "SG303",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SG303/obsidian-scio-notes-sync.git"
+  },
+  "engines": { "node": ">=22.13.0" },
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "build": "node build.mjs",
+    "test": "node build.mjs test && node --test dist/tests.cjs",
+    "check": "npm run typecheck && npm run lint && npm test && python3 scripts/release.py check && python3 -m unittest discover -s scripts -p 'test_*.py'",
+    "package": "npm run check && npm run build && python3 scripts/package.py",
+    "export": "python3 scripts/package.py --source"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0",
+    "eslint": "^9.39.5",
+    "eslint-plugin-obsidianmd": "^0.5.0",
+    "obsidian": "^1.8.7",
+    "typescript": "^5.3.3",
+    "typescript-eslint": "^8.72.1"
+  }
+}

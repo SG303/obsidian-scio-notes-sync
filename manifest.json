@@ -1,0 +1,9 @@
+{
+  "id": "scio-notes",
+  "name": "Scio Notes",
+  "version": "0.1.0",
+  "minAppVersion": "1.8.7",
+  "description": "Copy subject notes and images from your Scio instance into your vault for offline reference.",
+  "author": "SG303",
+  "isDesktopOnly": false
+}
