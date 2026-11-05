@@ -1,9 +1,8 @@
 # Repository setup and release management
 
-This project is prepared for **SG303/obsidian-scio-notes-sync**. Creating or
-publishing the repository, pushing release tags and submitting to the Obsidian
-directory are separate, explicit actions. Preparation alone performs none of
-them. All GitHub content must be in English.
+This is **SG303/obsidian-scio-notes-sync**. Pushing release tags and submitting
+to the Obsidian directory are separate, explicit actions. Release preparation
+alone publishes nothing. All GitHub content must be in English.
 
 ## Create the repository when authorized
 
@@ -54,19 +53,19 @@ verified in Obsidian; do not present it as a completed manual test.
   relevant changes under `## [Unreleased]` until a release is requested.
 - Tags are **`X.Y.Z`, without `v`**. Obsidian requires the exact manifest version
   as its release tag. This differs from the Scio app's `vX.Y.Z` tags.
-- No public release is recorded yet. Private builds currently use `0.1.0`.
-  The first release may retain that version; later releases must increase it.
+- The initial release uses `0.1.0`, retaining compatibility with the private
+  builds. Later releases must increase the version.
 
-On a release branch, prepare the initial version (only when requested):
+On a release branch, prepare the next version (only when requested), for example:
 
 ```sh
-python3 scripts/release.py prepare 0.1.0
+python3 scripts/release.py prepare 0.1.1
 npm run package
-python3 scripts/release.py check --tag 0.1.0
+python3 scripts/release.py check --tag 0.1.1
 ```
 
 The helper synchronizes version files and dates the Unreleased notes. It creates
-no commit, tag or release. For later versions, use the new version instead.
+no commit, tag or release. Substitute the version chosen for the release.
 Review the changes and merge the PR as `chore: release X.Y.Z` after checks pass.
 
 ## Publish only when requested
@@ -75,9 +74,9 @@ After the release PR has merged, check out and update `main`, verify a clean
 working tree and run the local checks. Explicitly push a new annotated tag:
 
 ```sh
-python3 scripts/release.py check --tag 0.1.0
-git tag -a 0.1.0 -m 'Scio Notes 0.1.0'
-git push origin 0.1.0
+python3 scripts/release.py check --tag 0.1.1
+git tag -a 0.1.1 -m 'Scio Notes 0.1.1'
+git push origin 0.1.1
 ```
 
 The **Plugin checks and release** workflow runs all checks and builds the

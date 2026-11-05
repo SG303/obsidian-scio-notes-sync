@@ -2,9 +2,11 @@
 
 All notable changes to Scio Notes are documented here in English.
 Versions follow Semantic Versioning. This plugin is versioned independently
-from the Scio application. No public release has been published yet.
+from the Scio application. Public releases are recorded in dated sections below.
 
 ## [Unreleased]
+
+## [0.1.0] - 2026-11-05
 
 ### Added
 
@@ -23,3 +25,9 @@ from the Scio application. No public release has been published yet.
   private installation. Server data and local annotations are never uploaded.
 - Manual check: sync a saved note with an image, disconnect Scio and open both;
   reconnect, update the source and sync again; local edits must remain untouched.
+
+### Validation
+
+- The owner confirmed that the Android test of the updated plugin succeeded.
+- Automated checks cover sync behavior, version consistency, archive isolation
+  and builds. Desktop behavior has not been manually verified in Obsidian.
