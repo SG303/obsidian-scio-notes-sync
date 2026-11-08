@@ -1,4 +1,18 @@
-# Agent instructions
+# obsidian-scio-notes-sync
+
+Obsidian community plugin (ID `scio-notes`) that imports Scio lecture notes
+and images into an Obsidian vault on desktop and Android. Public repo.
+
+Follows the SG303 baseline v1 (`sgstack/global/AGENTS.md`,
+`sgstack/baseline/tools.md`). If you cannot read those: work on a branch,
+open a PR, merge only with green checks (squash); never commit secrets or
+personal data; English for everything in the repo; talk to me in German.
+
+## Commands
+
+- Setup: `npm ci`
+- All checks: `npm run check` (types, lint, tests, release and Python tests)
+- Build and package: `npm run package` (creates `dist/scio-notes.zip`)
 
 Read this file and `RELEASING.md` before making changes. This project is the
 standalone **obsidian-scio-notes-sync** repository. While it is staged inside
@@ -41,3 +55,11 @@ Scio, the parent project's instructions also apply.
   synchronize package files and `versions.json`. Scio's app version is separate.
 - Publish tags/releases and submit to the community directory only on explicit
   request. Never rewrite existing tags or published release artifacts.
+
+## Deviations from baseline
+
+- `tool-canon`: release and packaging helpers in `scripts/` are plain Python
+  scripts tested with `unittest`, not a uv project with pytest.
+- Versioning: release tags are `X.Y.Z` without the `v` prefix, because
+  Obsidian's community plugin directory requires the tag to equal the version
+  in `manifest.json`.

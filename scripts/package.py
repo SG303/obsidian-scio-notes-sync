@@ -6,7 +6,7 @@ from zipfile import ZIP_DEFLATED, ZipFile
 ROOT = Path(__file__).resolve().parents[1]
 REPOSITORY = "obsidian-scio-notes-sync"
 SOURCE_FILES = (
-    ".gitignore", ".nvmrc", "AGENTS.md", "README.md", "RELEASING.md",
+    ".gitignore", ".nvmrc", ".editorconfig", "AGENTS.md", "CLAUDE.md", "README.md", "RELEASING.md",
     "CHANGELOG.md", "LICENSE", "manifest.json", "versions.json", "package.json",
     "package-lock.json", "tsconfig.json", "eslint.config.mjs", "build.mjs",
 )
