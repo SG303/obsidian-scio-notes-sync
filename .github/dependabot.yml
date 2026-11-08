@@ -1,0 +1,32 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: chore
+      include: scope
+    groups:
+      npm-minor-patch:
+        update-types: [minor, patch]
+    ignore:
+      # typescript-eslint 8.x supports TypeScript <6.1.0 only; TypeScript 7
+      # (native compiler) has no API it can use yet.
+      - dependency-name: typescript
+        versions: ['>=7.0.0']
+      # eslint-plugin-obsidianmd pulls in plugins that peer on ESLint ^9
+      # (@microsoft/eslint-plugin-sdl, eslint-plugin-import, eslint-plugin-react).
+      - dependency-name: eslint
+        versions: ['>=10.0.0']
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: ci
+      include: scope
+    groups:
+      actions-minor-patch:
+        update-types: [minor, patch]
