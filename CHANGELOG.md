@@ -6,6 +6,8 @@ from the Scio application. Public releases are recorded in dated sections below.
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-11-08
+
 ### Changed
 
 - Refresh the README for the published repository: document private-install

@@ -1,6 +1,6 @@
 {
   "name": "obsidian-scio-notes-sync",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "One-way sync of Scio lecture notes and images into an Obsidian vault.",
   "license": "MIT",
