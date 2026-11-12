@@ -3,7 +3,7 @@
 Obsidian community plugin (ID `scio-notes`) that imports Scio lecture notes
 and images into an Obsidian vault on desktop and Android. Public repo.
 
-Follows the SG303 baseline v1 (`sgstack/global/AGENTS.md`,
+Follows the SG303 baseline v2 (`sgstack/global/AGENTS.md`,
 `sgstack/baseline/tools.md`). If you cannot read those: work on a branch,
 open a PR, merge only with green checks (squash); never commit secrets or
 personal data; English for everything in the repo; talk to me in German.
