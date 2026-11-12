@@ -6,6 +6,9 @@ Scio remains the source. This plugin never creates, changes or deletes anything
 on the Scio server and makes no AI calls. No Obsidian account or paid sync service
 is required.
 
+> [!NOTE]
+> Personal project, built with AI coding agents under my supervision. Review the code carefully before you use it.
+
 This is an independent community plugin, not an official Obsidian product.
 Repository name: `obsidian-scio-notes-sync`. Installed plugin ID: `scio-notes`.
 Install from [GitHub Releases](https://github.com/SG303/obsidian-scio-notes-sync/releases).
@@ -166,6 +169,12 @@ Manual acceptance check on desktop **and a real Android device**:
 
 Automated tests and a successful browser-target build do not replace these
 real-device checks of Android networking, image rendering and lifecycle behavior.
+
+## Status
+
+Personal project, built with AI coding agents under my supervision. There is
+no support and no stability guarantee; review the code carefully before you
+rely on it. See [LICENSE](LICENSE) for the warranty terms.
 
 ## Support and license
 
