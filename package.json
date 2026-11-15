@@ -23,7 +23,7 @@
     "export": "python3 scripts/package.py --source"
   },
   "devDependencies": {
-    "esbuild": "^0.25.0",
+    "esbuild": "^0.28.2",
     "eslint": "^9.39.5",
     "eslint-plugin-obsidianmd": "^0.5.0",
     "obsidian": "^1.8.7",
